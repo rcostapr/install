@@ -418,6 +418,7 @@ $ psql -U postgres
 
 $ psql -h postgres.example.com -U postgres -W 
 $ psql -h 172.19.0.1 -U postgres -W
+$ psql -h 172.19.0.1 -p 55432 -U postgres -W
 ```
 
 
