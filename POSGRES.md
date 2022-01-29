@@ -419,6 +419,36 @@ $ psql -U postgres
 $ psql -h postgres.example.com -U postgres -W 
 $ psql -h 172.19.0.1 -U postgres -W
 $ psql -h 172.19.0.1 -p 55432 -U postgres -W
+$ psql -h localhost -p 5432 -U postgres testdb
+```
+
+## Commands
+### Show Databases
+```
+postgres=# \l
+postgres=# \l+
+```
+
+### Connect to Database
+```
+postgres=# \c sales
+Password: 
+psql (14.0 (Ubuntu 14.0-1.pgdg18.04+1), server 9.6.22)
+You are now connected to database "sales" as user "postgres".
+
+```
+
+### Show Tables
+```
+sales=# CREATE TABLE leads (id INTEGER PRIMARY KEY, name VARCHAR);
+CREATE TABLE
+sales=# \dt
+  List of relations
+ Schema | Name  | Type  |  Owner   
+--------+-------+-------+----------
+ public | leads | table | postgres
+(1 row)
+
 ```
 
 
