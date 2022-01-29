@@ -189,6 +189,21 @@ $ firewall-cmd --zone=public --permanent --add-port 5432/tcp
 $ firewall-cmd --reload
 # Confirm that port or service was opened successfully:
 $ firewall-cmd --list-all
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s3
+  sources: 
+  services: cockpit dhcpv6-client postgresql ssh
+  ports: 5432/tcp
+  protocols: 
+  forward: no
+  masquerade: no
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+
 ```
 ```
 sudo ufw allow 5432/tcp
@@ -235,10 +250,16 @@ max_connections = 100                   # (change requires restart)
 
 ```
 
-### Listen Ports
+### Check Port Status
 ```
 sudo lsof -i -P -n | grep LISTEN
 sudo netstat -tulpn | grep LISTEN
+[root@srvcentos ~]# netstat -na | grep 5432
+tcp        0      0 0.0.0.0:5432            0.0.0.0:*               LISTEN     
+tcp6       0      0 :::5432                 :::*                    LISTEN     
+unix  2      [ ACC ]     STREAM     LISTENING     194118   /var/run/postgresql/.s.PGSQL.5432
+unix  2      [ ACC ]     STREAM     LISTENING     194120   /tmp/.s.PGSQL.5432
+
 ```
 
 ------
@@ -403,19 +424,19 @@ $ psql -h 172.19.0.1 -U postgres -W
 # Incoming Connection
 ```bash
 # fedora or centos
-Shell$ yum install iftop -y
+$ yum install iftop -y
 
 # ubuntu or debian
-Shell$ sudo apt-get install iftop
+$ sudo apt-get install iftop
 
 # Centos (base repo)
-Shell$ yum install iptraf
+$ yum install iptraf
 
 # fedora or centos (with epel)
-Shell$ yum install iptraf-ng -y
+$ yum install iptraf-ng -y
 
 # ubuntu or debian
-Shell$ sudo apt-get install iptraf iptraf-ng
+$ sudo apt-get install iptraf iptraf-ng
 ```
 ```
 $ sudo iptraf
