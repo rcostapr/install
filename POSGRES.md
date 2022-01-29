@@ -159,8 +159,42 @@ sudo /usr/pgadmin4/bin/setup-web.sh
 
 ## Open Port for Comunications
 ------
+```bash
+$ firewall-cmd --list-all
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s3
+  sources: 
+  services: cockpit dhcpv6-client ssh
+  ports: 
+  protocols: 
+  forward: no
+  masquerade: no
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+
+$ firewall-cmd --get-services
+    ... pop3 pop3s postgresql privoxy prometheus ....
+
+$ firewall-cmd --get-zones
+  block dmz drop external home internal nm-shared public trusted work
+# For example let’s open postgresql service port for zone public:
+firewall-cmd --zone=public --permanent --add-service=postgresql
+# OR  preconfigured services use the --add-port option. For example let’s open TCP port 8080 for zone public:
+$ firewall-cmd --zone=public --permanent --add-port 5432/tcp
+# Reload
+$ firewall-cmd --reload
+# Confirm that port or service was opened successfully:
+$ firewall-cmd --list-all
+```
 ```
 sudo ufw allow 5432/tcp
+iptables -I INPUT 1 -m tcp -p tcp --dport 5432 -j ACCEPT 
+service iptables save 
+service iptables restart 
 ```
 
 ### Edit postgresql.conf
@@ -339,6 +373,17 @@ local   all             postgres                                md5
 
 ```
 
+```
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             all                                     md5
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            md5  
+# IPv6 local connections:
+host    all             all             ::1/128                 md5  
+```
+
 ## Login With
 postgresql client
 ```bash
@@ -353,3 +398,53 @@ $ psql -U postgres
 $ psql -h postgres.example.com -U postgres -W 
 $ psql -h 172.19.0.1 -U postgres -W
 ```
+
+
+# Incoming Connection
+```bash
+# fedora or centos
+Shell$ yum install iftop -y
+
+# ubuntu or debian
+Shell$ sudo apt-get install iftop
+
+# Centos (base repo)
+Shell$ yum install iptraf
+
+# fedora or centos (with epel)
+Shell$ yum install iptraf-ng -y
+
+# ubuntu or debian
+Shell$ sudo apt-get install iptraf iptraf-ng
+```
+```
+$ sudo iptraf
+$ sudo iftop -n
+$ pktstat -n
+```
+
+
+# How to close ports on RHEL 8 / CentOS 8 Linux step by step instructions
+
+
+
+    First check for already opened ports or services. Take a note of the zone, protocol as well as port or service you wish to close:
+
+    # firewall-cmd --list-all
+
+    Close port or service. The below command will close the http service in the public zone:
+
+    # firewall-cmd --zone=public --permanent --remove-service http
+
+    In case you wish to close a specific port use the --remove-port option. For example let’s close the TCP 8080 port:
+
+    # firewall-cmd --zone=public --permanent --remove-port 8080
+
+    Reload the firewall settings:
+
+    # firewall-cmd --reload
+
+    Confirm that port or service was closed successfully:
+
+    # firewall-cmd --list-all
+
