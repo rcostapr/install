@@ -14,15 +14,25 @@
    Zend Engine v4.1.2, Copyright (c) Zend Technologies   
     ```
 ### Install Extensions
-copy c:\php\php.ini-development c:\php\php.ini
+- copy c:\php\php.ini-development c:\php\php.ini
+- edit php.ini
+- uncomment Dynamic Extensions
+
 ### Install Composer
 https://getcomposer.org/download/
+cd c:\php
 ```
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 php composer-setup.php
+echo @php "%~dp0composer.phar" %*>composer.bat
 php -r "unlink('composer-setup.php');"
 ```
+composer global require squizlabs/php_codesniffer
+ 
+C:/Users/adm_r.costa/AppData/Roaming/Composer
+
+C:\Users\adm_r.costa\AppData\Roaming\Composer\vendor\squizlabs\php_codesniffer\bin
 --------
 
 ## DEBIAN
