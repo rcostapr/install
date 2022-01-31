@@ -32,7 +32,8 @@ composer global require squizlabs/php_codesniffer
  
 C:/Users/adm_r.costa/AppData/Roaming/Composer
 
-C:\Users\adm_r.costa\AppData\Roaming\Composer\vendor\squizlabs\php_codesniffer\bin
+C:\Users\adm_r.costa\AppData\Roaming\Composer\vendor\squizlabs\php_codesniffer\bin\phpcs
+
 --------
 
 ## DEBIAN
