@@ -2,6 +2,17 @@
 
 --------
 
+## WINDOWS
+- Download Zip File from https://windows.php.net/download#php-8.1
+- Extract to c:\php
+- Add c:\php to PATH
+- Test with
+    -   php --version
+    ```
+    php --version                                                                                      PHP 8.1.2 (cli) (built: Jan 19 2022 10:18:23) (ZTS Visual C++ 2019 x64)                                                 Copyright (c) The PHP Group                                                                                             Zend Engine v4.1.2, Copyright (c) Zend Technologies   
+    ```
+--------
+
 ## DEBIAN
 
 -------
