@@ -9,8 +9,20 @@
 - Test with
     -   php --version
     ```
-    php --version                                                                                      PHP 8.1.2 (cli) (built: Jan 19 2022 10:18:23) (ZTS Visual C++ 2019 x64)                                                 Copyright (c) The PHP Group                                                                                             Zend Engine v4.1.2, Copyright (c) Zend Technologies   
+   PHP 8.1.2 (cli) (built: Jan 19 2022 10:18:23) (ZTS Visual C++ 2019 x64)                                                 
+   Copyright (c) The PHP Group                                                                                             
+   Zend Engine v4.1.2, Copyright (c) Zend Technologies   
     ```
+### Install Extensions
+copy c:\php\php.ini-development c:\php\php.ini
+### Install Composer
+https://getcomposer.org/download/
+```
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
 --------
 
 ## DEBIAN
