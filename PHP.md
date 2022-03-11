@@ -135,11 +135,18 @@ $ dnf update
 ### CENTOS 7
 #### Installing PHP version 7.2
 1. Turn on EPEL repo, enter:
+```
 $ sudo yum -y install epel-release
+```
 2. Turn on Remi repo i.e.remi-php72:
+```
 $ sudo yum-config-manager --enable remi-php72
-Refresh repository:
--------------------
+```
+__Refresh repository:__
+```
 $ sudo yum update
+```
 3. Install php version 7.2, run:
+```
 $ sudo yum install php
+```
