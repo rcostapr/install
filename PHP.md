@@ -133,20 +133,40 @@ $ dnf module install php:remi-7.4
 $ dnf update
 ```
 ### CENTOS 7
-#### Installing PHP version 7.2
-1. Turn on EPEL repo, enter:
+#### Installing PHP version 7.3
+1. PHP 7.3 is available for CentOS 7 and Fedora distributions from the Remi repository. Add it to your system by running
 ```
-$ sudo yum -y install epel-release
+$ sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm 
+$ sudo yum -y install epel-release yum-utils
 ```
-2. Turn on Remi repo i.e.remi-php72:
+2. Turn on Remi repo i.e.remi-php73:
 ```
-$ sudo yum-config-manager --enable remi-php72
+$ sudo yum-config-manager --enable remi-php73
 ```
+ - To disable previous repo:
+    ```
+    $ sudo yum-config-manager --disable remi-php54
+    ```
 __Refresh repository:__
 ```
 $ sudo yum update
 ```
-3. Install php version 7.2, run:
+3. Install PHP 7.3 on CentOS 7 / Fedora
 ```
-$ sudo yum install php
+$ sudo yum -y install php php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json
+```
+4. Check Version
+```
+$ php -v
+```
+#### Installing other PHP 7.3 Extensions
+Install syntax:
+- sudo yum install php-<entension-name>
+As an example, to install a mysql module for PHP applications that use MySQL databases, you’ll run:
+```
+sudo yum install php-mysqlnd
+```
+__Confirm:__
+```
+$ rpm -qi php-mysqlnd
 ```
