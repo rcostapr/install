@@ -161,7 +161,9 @@ $ php -v
 ```
 #### Installing other PHP 7.3 Extensions
 Install syntax:
-- sudo yum install php-<entension-name>
+```
+$ sudo yum install php-<entension-name>
+```
 As an example, to install a mysql module for PHP applications that use MySQL databases, you’ll run:
 ```
 sudo yum install php-mysqlnd
