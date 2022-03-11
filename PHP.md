@@ -119,10 +119,10 @@ $ php go-pear.phar
 
 --------
 
-## CENTOS 8
+## CENTOS
 
 -------
-
+### CENTOS 8
 ```
 $ sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
@@ -132,3 +132,14 @@ $ dnf module reset php
 $ dnf module install php:remi-7.4
 $ dnf update
 ```
+### CENTOS 7
+#### Installing PHP version 7.2
+1. Turn on EPEL repo, enter:
+$ sudo yum -y install epel-release
+2. Turn on Remi repo i.e.remi-php72:
+$ sudo yum-config-manager --enable remi-php72
+Refresh repository:
+-------------------
+$ sudo yum update
+3. Install php version 7.2, run:
+$ sudo yum install php
