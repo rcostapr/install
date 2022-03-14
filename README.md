@@ -2,16 +2,16 @@
 
 ## PHP
 
-[Instalation](PHP.md)
+[Installation](PHP.md)
 
 ## Apache
 
-[Instalation](APACHE.md)
+[Installation](APACHE.md)
 
 ## Mysql
 
-[Instalation](MYSQL.md)
+[Installation](MYSQL.md)
 
 ## Posgres
 
-[Instalation](POSGRES.md)
+[Installation](POSGRES.md)
