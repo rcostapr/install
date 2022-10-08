@@ -206,3 +206,7 @@ $ sudo nano /etc/hosts
 
 # ModSecurity
 https://phoenixnap.com/kb/setup-configure-modsecurity-on-apache
+
+```
+$ sudo apt install libapache2-mod-security2
+```
