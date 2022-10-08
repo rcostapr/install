@@ -61,7 +61,7 @@ $ sudo apt install php8.1 php8.1-fpm -y
 
 ## Install Extensions
 ```
-$ sudo apt install php8.1-{common,mysql,xml,xmlrpc,curl,gd,imagick,cli,dev,imap,mbstring,opcache,soap,zip,intl,bcmath} -y
+$ sudo apt install php8.1-{common,mysql,xml,xmlrpc,curl,gd,imagick,cli,dev,imap,mbstring,opcache,soap,zip,intl,bcmath,opcache,xdebug,apcu} -y
 ```
 
 ## Switching PHP Version
