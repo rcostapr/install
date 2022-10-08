@@ -12,6 +12,11 @@ $ dnf module list postgresql
 $ sudo dnf module enable postgresql:13
 $ sudo dnf module install postgresql:13
 ```
+- Ubuntu
+```
+$ sudo apt install -y postgresql postgresql-contrib postgresql-client
+$ sudo dpkg --status postgresql
+```
 
 ## Remove Posgres
 -------------
