@@ -213,32 +213,48 @@ $ sudo apt install libapache2-mod-security2
 ## Configure ModSecurity
 1. Copy and rename the file:
 
-sudo cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
+```
+$ sudo cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
 
+```
 2. Next, change the ModSecurity detection mode. First, move into the /etc/modsecurity folder:
 
-sudo cd /etc/modsecurity
+```
+$ sudo cd /etc/modsecurity
 
+```
 3. Open the configuration file in a text editor (we will be using nano):
 
-sudo nano modsecurity.conf
+```
+$ sudo nano modsecurity.conf
 
+```
 Near the top, you should see an entry labeled:
 
+```
 SecRuleEngine DetectionOnly
 
+```
 Change this to read as follows:
 
+```
 SecRuleEngine On
 
+```
 4. Use CTRL+X to exit, then press y then Enter to save the changes.
 
 5. Navigate away from the /etc/modsecurity folder:
 
-cd
+```
+$ cd
 
+```
 6. Restart Apache:
 
 On Debian/Ubuntu
 
-sudo systemctl restart apache2
+```
+$ sudo systemctl restart apache2
+
+```
+## Download Latest OWASP ModSecurity Rules
