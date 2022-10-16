@@ -35,6 +35,18 @@ service postgresql status
 ```
 service postgresql start
 ```
+## Get Client Version
+```
+$ locate bin/psql
+/usr/bin/psql
+/usr/lib/postgresql/10/bin/psql
+/usr/lib/postgresql/11/bin/psql
+/usr/lib/postgresql/12/bin/psql
+/usr/lib/postgresql/13/bin/psql
+/usr/lib/postgresql/14/bin/psql
+$ psql -V
+psql (PostgreSQL) 14.0 (Ubuntu 14.0-1.pgdg18.04+1) 
+```
 
 ## Problem
 ----------------
