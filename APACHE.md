@@ -20,7 +20,7 @@ $ sudo systemctl status apache2
 ```
 $ sudo nano /etc/apache2/apache2.conf
  ...
- ServerName srvph.simplesenergia.es
+ ServerName srv.example.com
  ...
 ```
 
