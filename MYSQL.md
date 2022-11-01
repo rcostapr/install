@@ -43,3 +43,14 @@ To ensure that the database server launches after a reboot, run the following co
 ```
 $ sudo systemctl enable mysql
 ```
+
+## Workbench
+### Snap Install
+```
+$ snap install mysql-workbench-community
+```
+#### To store passwords
+```
+$ snap connect mysql-workbench-community:password-manager-service
+$ snap connect mysql-workbench-community:ssh-keys
+```
