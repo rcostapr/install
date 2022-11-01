@@ -26,7 +26,7 @@ $ sudo ufw allow mysql
 ## Definir o root para autenticar-se com o mysql_native_password:
 ```
 $ sudo mysql
-mysql > ALTER USER 'root'@'localhost' IDENTIFIED WITH $ mysql_native_password BY 'password';
+mysql > ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 mysql > FLUSH PRIVILEGES;
 mysql > exit;
 ```
