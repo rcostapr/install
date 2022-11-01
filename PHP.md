@@ -120,6 +120,7 @@ $ php go-pear.phar
 -   sudo apt-get install php-ssh2
 -   sudo pecl install ssh2-1.2 (ubuntu 20)
 -   sudo pecl install ssh2-1.3 (ubuntu 22)
+-   sudo apt install php7.4-ssh2 (ubuntu 22)
 -   sudo phpenmod xsl
 -   sudo phpenmod dom
 -   sudo phpenmod ssh2
