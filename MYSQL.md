@@ -59,4 +59,5 @@ $ snap connect mysql-workbench-community:ssh-keys
 # * InnoDB
 innodb_buffer_pool_size=20G
 innodb_buffer_pool_instances=16
-``
+```
+
