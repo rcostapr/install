@@ -54,3 +54,9 @@ $ snap install mysql-workbench-community
 $ snap connect mysql-workbench-community:password-manager-service
 $ snap connect mysql-workbench-community:ssh-keys
 ```
+## Configuration
+```
+# * InnoDB
+innodb_buffer_pool_size=20G
+innodb_buffer_pool_instances=16
+``
