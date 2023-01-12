@@ -517,3 +517,8 @@ $ pktstat -n
 
     # firewall-cmd --list-all
 
+# PostgreSQL: Reset password of PostgreSQL on Ubuntu
+- Login with psql as the postgres superuser with this shell command:
+``` $ sudo -u postgres psql````
+- Run SQL command:
+``` $ ALTER USER postgres PASSWORD 'newpassword';```
