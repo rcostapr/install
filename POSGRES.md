@@ -526,5 +526,5 @@ $ sudo -u postgres psql
 ```
 - Run SQL command:
 ```
-$ ALTER USER postgres PASSWORD 'newpassword';
+postgres=# ALTER USER postgres PASSWORD 'newpassword';
 ```
